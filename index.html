@@ -14,9 +14,11 @@
     const convertarray = (arraydata = []) => {
         const formattedData = [];
         arraydata.forEach(element => {
+			array = {}
             element.forEach(el => {
-            formattedData.push(el);
+				array[el.key] = el.value;
             });
+			formattedData.push(array)
         });
         return formattedData;
     };
