@@ -16,7 +16,13 @@
         arraydata.forEach(element => {
 			array = {}
             element.forEach(el => {
-				array[el.key] = el.value;
+				if(el.key!='sector')
+				{
+					array[el.key] = parseFloat(el.value);
+				}else{
+					array[el.key] = el.value;
+				}
+				
             });
 			formattedData.push(array)
         });
@@ -24,6 +30,7 @@
     };
     var formattedarray = convertarray(arraydata);
     console.log(formattedarray);
+
    </script>
 </body>
 </html>
